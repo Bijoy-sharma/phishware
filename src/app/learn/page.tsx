@@ -793,10 +793,15 @@ export default function LearnPage() {
                 const Icon = module.icon;
 
                 return (
-                  <article
-                    key={module.number}
-                    className="group rounded-xl border border-white/[0.08] bg-[#101728] p-5 transition hover:border-violet-400/30 hover:bg-[#131D32] sm:p-6"
-                  >
+                  <Link
+  href={
+    module.number === "01"
+      ? "/learn/social-engineering"
+      : "#social-engineering"
+  }
+  key={module.number}
+  className="group block rounded-xl border border-white/[0.08] bg-[#101728] p-5 transition hover:border-violet-400/30 hover:bg-[#131D32] sm:p-6"
+>
                     <div className="flex items-start gap-4">
                       <div className="hidden h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-violet-500/10 text-violet-400 sm:flex">
                         <Icon size={21} />
@@ -843,7 +848,7 @@ export default function LearnPage() {
                         className="mt-1 shrink-0 text-slate-600 transition group-hover:translate-x-1 group-hover:text-violet-400"
                       />
                     </div>
-                  </article>
+                  </Link>
                 );
               })}
             </div>
