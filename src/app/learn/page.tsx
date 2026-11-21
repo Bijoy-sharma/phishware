@@ -803,7 +803,9 @@ href={
         ? "/learn/social-engineering/phishing"
         : module.number === "04"
           ? "/learn/social-engineering/vishing"
-          : "#social-engineering"
+          : module.number === "05"
+            ? "/learn/social-engineering/pretexting"
+            : "#social-engineering"
 }
   key={module.number}
   className="group block rounded-xl border border-white/[0.08] bg-[#101728] p-5 transition hover:border-violet-400/30 hover:bg-[#131D32] sm:p-6"
