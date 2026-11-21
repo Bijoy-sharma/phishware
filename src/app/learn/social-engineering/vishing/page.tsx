@@ -1,4 +1,4 @@
-
+import VishingQuiz from "@/components/learn/VishingQuiz";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -645,11 +645,8 @@ export default function VishingModulePage() {
             </div>
           </div>
 
-          <div className="mt-5 rounded-xl border border-white/5 bg-white/[0.03] p-4">
-            <p className="text-sm text-slate-400">
-              The interactive assessment will be added in the next step.
-            </p>
-          </div>
+        {/* Interactive Knowledge Assessment */}
+<VishingQuiz />
         </section>
 
         {/* Module navigation */}
