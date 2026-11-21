@@ -192,35 +192,70 @@ export default function SocialEngineeringLessonPage() {
             COURSE MODULES
           </p>
 
-          <nav className="space-y-2">
-            {[
-              "Introduction to Social Engineering",
-              "Psychology of Human Manipulation",
-              "Phishing and Spear Phishing",
-              "Vishing, Smishing and QR Phishing",
-              "Pretexting and Impersonation",
-              "Baiting and Quid Pro Quo",
-              "Workplace and Physical Attacks",
-              "Real-World Case Studies",
-              "Detection and Prevention",
-              "Incident Response and Recovery",
-            ].map((module, index) => (
-              <a
-                key={module}
-                href="#lesson-content"
-                className={`flex items-start gap-3 rounded-lg px-3 py-3 text-xs leading-5 transition ${
-                  index === 0
-                    ? "border border-violet-400/20 bg-violet-500/10 text-violet-300"
-                    : "text-slate-400 hover:bg-white/[0.04] hover:text-white"
-                }`}
-              >
-                <span className="font-bold">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <span>{module}</span>
-              </a>
-            ))}
-          </nav>
+         
+<nav className="space-y-2">
+  {[
+    {
+      title: "Introduction to Social Engineering",
+      href: "/learn/social-engineering",
+    },
+    {
+      title: "Psychology of Human Manipulation",
+      href: "/learn/social-engineering/psychology",
+    },
+    {
+      title: "Phishing and Spear Phishing",
+      href: "#",
+    },
+    {
+      title: "Vishing, Smishing and QR Phishing",
+      href: "#",
+    },
+    {
+      title: "Pretexting and Impersonation",
+      href: "#",
+    },
+    {
+      title: "Baiting and Quid Pro Quo",
+      href: "#",
+    },
+    {
+      title: "Workplace and Physical Attacks",
+      href: "#",
+    },
+    {
+      title: "Real-World Case Studies",
+      href: "#",
+    },
+    {
+      title: "Detection and Prevention",
+      href: "#",
+    },
+    {
+      title: "Incident Response and Recovery",
+      href: "#",
+    },
+  ].map((module, index) => (
+    <Link
+      key={module.title}
+      href={module.href}
+      className={`flex items-start gap-3 rounded-lg px-3 py-3 text-xs leading-5 transition ${
+        index === 0
+          ? "border border-violet-400/20 bg-violet-500/10 text-violet-300"
+          : "text-slate-400 hover:bg-white/[0.04] hover:text-white"
+      }`}
+    >
+      <span className="font-bold">
+        {String(index + 1).padStart(2, "0")}
+      </span>
+      <span>{module.title}</span>
+      {index === 1 && (
+        <span className="ml-auto text-violet-400">→</span>
+      )}
+    </Link>
+  ))}
+</nav>
+
 
           <div className="mt-8 rounded-xl border border-white/[0.08] p-4">
             <Lightbulb size={19} className="text-amber-400" />
@@ -756,10 +791,19 @@ export default function SocialEngineeringLessonPage() {
               </Link>
 
               <div className="rounded-xl border border-violet-400/20 bg-violet-500/[0.07] px-5 py-4">
-                <div className="flex items-center justify-center gap-2 text-sm font-semibold text-violet-300">
-                  Next: Psychology of Human Manipulation
-                  <ArrowRight size={16} />
-                </div>
+              <Link
+  href="/learn/social-engineering/psychology"
+  className="rounded-xl border border-violet-400/20 bg-violet-500/[0.07] px-5 py-4 transition hover:border-violet-400/50 hover:bg-violet-500/10"
+>
+  <div className="flex items-center justify-center gap-2 text-sm font-semibold text-violet-300">
+    Next: Psychology of Human Manipulation
+    <ArrowRight size={16} />
+  </div>
+
+  <p className="mt-2 text-center text-[10px] text-slate-500">
+    Module 02 · Continue learning
+  </p>
+</Link>
                 <p className="mt-2 text-center text-[10px] text-slate-500">
                   Module 02 · Coming in the next development phase
                 </p>

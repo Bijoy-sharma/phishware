@@ -794,11 +794,17 @@ export default function LearnPage() {
 
                 return (
                   <Link
-  href={
-    module.number === "01"
-      ? "/learn/social-engineering"
-      : "#social-engineering"
-  }
+href={
+  module.number === "01"
+    ? "/learn/social-engineering"
+    : module.number === "02"
+      ? "/learn/social-engineering/psychology"
+      : module.number === "03"
+        ? "/learn/social-engineering/phishing"
+        : module.number === "04"
+          ? "/learn/social-engineering/vishing"
+          : "#social-engineering"
+}
   key={module.number}
   className="group block rounded-xl border border-white/[0.08] bg-[#101728] p-5 transition hover:border-violet-400/30 hover:bg-[#131D32] sm:p-6"
 >
